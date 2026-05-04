@@ -32,7 +32,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: linear-gradient(145deg, #bfb8a7 0%, #c3c2ae 100%);
+            background: linear-gradient(145deg, #fff8ef 0%, #fef5e8 100%);
             overflow: hidden;
         }
 
@@ -71,12 +71,11 @@
 
         /* Основной сайт – изящная карточка, похожая на дорогую открытку, но в стиле полноценного лендинга */
         .wedding-site {
-            background: rgba(255, 252, 245, 0.94);
+            background: rgba(255, 252, 245, 0.96);
             backdrop-filter: blur(1px);
             border-radius: 56px;
-            box-shadow: 0 35px 50px -20px rgba(0,0,0,0.1), 0 0 0 1px rgba(212,175,55,0.2), 0 0 0 4px rgba(255,250,225,0.8);
+            box-shadow: 0 35px 50px -20px rgba(0,0,0,0.08), 0 0 0 1px rgba(212,175,55,0.2), 0 0 0 4px rgba(255,250,225,0.8);
             overflow: hidden;
-            transition: all 0.2s;
         }
 
         /* Область для главной фотографии молодожёнов */
@@ -92,7 +91,7 @@
         .photo-frame {
             position: relative;
             width: 100%;
-            padding-top: 100%; /* квадратное поле для фото, но можно адаптировать под более высокое фото — используем object-fit cover */
+            padding-top: 100%; /* квадратное поле для фото */
             background: #eadbbc;
             overflow: hidden;
         }
@@ -256,7 +255,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin: 2rem 0 1rem;
+            margin: 2rem 0 1.5rem;
             justify-content: center;
         }
 
@@ -292,48 +291,66 @@
             box-shadow: 0 14px 22px -8px rgba(160, 130, 60, 0.15);
         }
 
-        /* Блок с кнопками (открыть веб-сайт / сохранить) */
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0 0.6rem;
-            flex-wrap: wrap;
-            justify-content: center;
+        /* НОВЫЙ БЛОК — ТЁПЛЫЕ СЛОВА И ПОДТВЕРЖДЕНИЕ (вместо кнопок action-buttons) */
+        .wishes-block {
+            background: linear-gradient(135deg, #fffbf0, #fef7e8);
+            border-radius: 48px;
+            padding: 1.8rem 1.5rem;
+            margin: 2rem 0 1rem;
+            text-align: center;
+            border: 1px solid #eddbba;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
         }
 
-        .btn-gold {
+        .heart-icon {
+            font-size: 2rem;
+            color: #e8c36a;
+            margin-bottom: 0.8rem;
+        }
+
+        .wishes-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: #5e4530;
+            margin-bottom: 1.2rem;
+        }
+
+        .wishes-signature {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b89860;
+            margin-bottom: 0.5rem;
+        }
+
+        .rsvp-button {
             background: transparent;
-            border: 1px solid #dbb256;
-            padding: 0.8rem 1.6rem;
-            border-radius: 50px;
+            border: 1.5px solid #e2be6a;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             font-size: 0.9rem;
-            color: #856e3d;
+            color: #8a6c3e;
             transition: 0.2s;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            margin-top: 0.5rem;
         }
 
-        .btn-gold i {
-            color: #c8a148;
+        .rsvp-button i {
+            color: #dbb454;
         }
 
-        .btn-gold:hover {
-            background: #eaca7a;
-            border-color: #c6a249;
+        .rsvp-button:hover {
+            background: #e5c77e;
+            border-color: #cfaa58;
             color: #2e2415;
             transform: scale(0.97);
-        }
-
-        .btn-solid {
-            background: #e2be6a;
-            border: none;
-            color: #2f2418;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
         /* футер с элегантным текстом */
@@ -361,11 +378,8 @@
             .big-day {
                 font-size: 1.6rem;
             }
-            .action-buttons {
-                flex-direction: column;
-            }
-            .btn-gold {
-                justify-content: center;
+            .wishes-text {
+                font-size: 1rem;
             }
         }
 
@@ -400,12 +414,9 @@
         <!-- ФОТО МОЛОДОЖЁНОВ НА ПЕРЕДНЕМ ПЛАНЕ -->
         <div class="hero-photo">
             <div class="photo-frame">
-                <!-- ВАЖНО: замените ссылку на реальное фото пары. Здесь вставлена красивая нейтральная заглушка в стиле "влюбленные".
-                     Для продакшена поменяйте src на свою фотографию. Я создал элегантное placeholder с силуэтом влюбленных и цветами,
-                     но чтобы сайт выглядел живым, использовал атмосферное фото из Unsplash (абсолютно нейтральное, но прекрасное).
-                     Вы можете заменить на свою фотографию Ильнур и Назира -->
+                <!-- Фото: замените wedding.jpg на ваше фото, загруженное в репозиторий -->
                 <img class="couple-img" src="wedding.jpg" alt="Ильнур и Назира — влюбленная пара" 
-                     onerror="this.src='https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=600'">
+                     onerror="this.src='https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800'">
             </div>
             <div class="floating-names">
                 <h1>Ильнур & Назира</h1>
@@ -432,10 +443,10 @@
             <div class="no-kids-gentle">
                 <p><i class="fas fa-heart"></i> Дорогие гости, хотим, чтобы вы отдохнули и насладились праздником в полной мере, <br> 
                 поэтому с нежностью просим провести этот вечер без детей.</p>
-                <div class="small-wish">Создадим атмосферу лёгкости и романтики вместе</div>
+                <div class="small-wish">Создадим атмосферу лёгкости и романтики вместе ✨</div>
             </div>
 
-            <!-- Три блока "Идеи, которые вас заинтересуют" из референса (Фоновые узоры, Золотистые обои, Цветочный фон) -->
+            <!-- Три блока "Идеи, которые вас заинтересуют" (Фоновые узоры, Золотистые обои, Цветочный фон) -->
             <div class="inspiration-block">
                 <div class="inspire-card">
                     <i class="fas fa-border-all"></i>
@@ -453,9 +464,25 @@
                     <span style="font-size:0.7rem;">Свадебная флористика</span>
                 </div>
             </div>
-            <div class="action-buttons">
-                <button class="btn-gold" id="openWebsiteBtn"><i class="fas fa-globe"></i> Открыть веб-сайт</button>
-                <button class="btn-gold btn-solid" id="saveInviteBtn"><i class="far fa-save"></i> Сохранить приглашение</button>
+
+            <!-- НОВЫЙ БЛОК — ТЁПЛЫЕ СЛОВА (вместо action-buttons с кнопками) -->
+            <div class="wishes-block">
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="wishes-text">
+                    «Счастье — это когда рядом те, кто дорог. <br>
+                    Мы будем бесконечно рады видеть вас в этот важный для нас день!»
+                </div>
+                <div class="wishes-signature">
+                    Ильнур & Назира
+                </div>
+                <button class="rsvp-button" id="rsvpBtn">
+                    <i class="far fa-envelope"></i> Подтвердить присутствие
+                </button>
+                <div class="small-wish" style="margin-top: 1rem;">
+                    Пожалуйста, дайте знать до 1 июля
+                </div>
             </div>
             
             <div class="footer-note">
@@ -469,22 +496,13 @@
 </div>
 
 <script>
-    // Интерактивности для кнопок / уведомлений (без комментариев, просто красивые реакции)
-    const openBtn = document.getElementById('openWebsiteBtn');
-    const saveBtn = document.getElementById('saveInviteBtn');
+    // Кнопка подтверждения присутствия (вместо старых кнопок)
+    const rsvpBtn = document.getElementById('rsvpBtn');
     
-    if (openBtn) {
-        openBtn.addEventListener('click', () => {
-            // Имитация открытия страницы с полной информацией, но чтобы не перегружать – покажем красивое всплывающее окно
-            alert("🌹 Дорогие гости! Полная программа свадьбы, схема проезда и пожелания — по ссылке, которую вы получите в индивидуальном приглашении. Ждём вас 20 июля!");
-        });
-    }
-    
-    if (saveBtn) {
-        saveBtn.addEventListener('click', () => {
-            // Элегантное уведомление "сохранено"
+    if (rsvpBtn) {
+        rsvpBtn.addEventListener('click', () => {
             const notification = document.createElement('div');
-            notification.innerText = '✨ Приглашение сохранено в вашем календаре! ✨';
+            notification.innerHTML = '🌹 Спасибо! Мы ждём вас 20 июля 🌹';
             notification.style.position = 'fixed';
             notification.style.bottom = '20px';
             notification.style.left = '50%';
@@ -508,7 +526,7 @@
         });
     }
     
-    // Добавим при загрузке легкий эффект появления
+    // Анимация появления
     window.addEventListener('load', () => {
         const siteCard = document.querySelector('.wedding-site');
         if (siteCard) {

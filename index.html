@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Свадебное приглашение | Ильнур & Назира | Нежное золото</title>
-    <!-- Премиальные шрифты: элегантный курсив + чистый гротеск -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (лёгкие иконки) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Свадебное приглашение | Ильнур & Назира</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,529 +13,254 @@
         }
 
         body {
-            background: #fdfaf5;  /* молочно-белая основа */
+            background: #fcf5ea;
             font-family: 'Cormorant Garamond', serif;
-            color: #2e241f;
-            line-height: 1.4;
+            color: #2c1e12;
             min-height: 100vh;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        /* Главный воздушный фон с нежными золотыми нотками и лёгкими цветочными силуэтами — никакого "ковра" */
-        .ethereal-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: linear-gradient(145deg, #fff8ef 0%, #fef5e8 100%);
-            overflow: hidden;
-        }
-
-        /* Деликатные золотые пыльца и изящные узоры, прозрачные цветочные элементы */
-        .ethereal-bg::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" opacity="0.2"><path fill="none" stroke="%23d4af37" stroke-width="0.8" d="M50,80 Q70,60 90,80 Q110,100 130,80 Q150,60 170,80" stroke-dasharray="2 3"/><circle cx="220" cy="70" r="8" fill="none" stroke="%23c8a43b" stroke-width="0.8"/><circle cx="40" cy="210" r="12" fill="none" stroke="%23dbb443" stroke-width="0.6"/><path d="M180,220 L200,210 L210,225 L195,232 Z" fill="%23d4af37" opacity="0.3"/><path d="M260,140 L270,135 L275,145 L265,150 Z" fill="%23e7bd4f" opacity="0.3"/><path d="M30,140 L45,130 L55,145 L42,155 Z" fill="%23f0cb66" opacity="0.25"/></svg>');
-            background-repeat: repeat;
-            background-size: 80px;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        /* дополнительные нежные ветви */
-        .ethereal-bg::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            background: radial-gradient(ellipse at 50% 100%, rgba(245, 235, 210, 0.4) 0%, rgba(255,250,240,0) 70%);
-            pointer-events: none;
-        }
-
+        /* КОНТЕЙНЕР — ДОСТАТОЧНО ШИРОКИЙ, ЧТОБЫ ВЕНЗЕЛЯ НЕ ОБРЕЗАЛИСЬ */
         .container {
-            max-width: 720px;
-            margin: 2rem auto;
-            position: relative;
-            z-index: 2;
-            padding: 0 1rem;
+            max-width: 1000px;
+            width: 6000%;
+            max-height: 1000%;
+            margin: 0 auto;
         }
 
-        /* Основной сайт – изящная карточка, похожая на дорогую открытку, но в стиле полноценного лендинга */
-        .wedding-site {
-            background: rgba(255, 252, 245, 0.96);
-            backdrop-filter: blur(1px);
-            border-radius: 56px;
-            box-shadow: 0 35px 50px -20px rgba(0,0,0,0.08), 0 0 0 1px rgba(212,175,55,0.2), 0 0 0 4px rgba(255,250,225,0.8);
-            overflow: hidden;
+        /* ФОН С ВЕНЗЕЛЯМИ — ИСПОЛЬЗУЕМ ВАШУ ПРАВИЛЬНУЮ ССЫЛКУ */
+        .invitation-card {
+            background-image: url('https://i.pinimg.com/736x/2f/d8/74/2fd874957d64c2dd53351eeae0bc1727.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: 80px;
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
+            /* УВЕЛИЧЕННЫЕ ВНУТРЕННИЕ ОТСТУПЫ, ЧТОБЫ ТЕКСТ БЫЛ ВНУТРИ ВЕНЗЕЛЕЙ */
+            padding: 15rem 12rem;
         }
 
-        /* Область для главной фотографии молодожёнов */
-        .hero-photo {
-            position: relative;
-            width: 100%;
-            background: #f6efdf;
-            overflow: hidden;
-            border-radius: 56px 56px 48px 48px;
-            margin-bottom: 0;
-        }
-
-        .photo-frame {
-            position: relative;
-            width: 100%;
-            padding-top: 100%; /* квадратное поле для фото */
-            background: #eadbbc;
-            overflow: hidden;
-        }
-
-        .couple-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            transition: transform 0.3s ease;
-        }
-
-        /* Эффект легкого золотого свечения вокруг фото */
-        .hero-photo::after {
-            content: "";
-            position: absolute;
-            bottom: -20px;
-            left: 10%;
-            width: 80%;
-            height: 35px;
-            background: radial-gradient(ellipse, rgba(212,175,55,0.25), transparent);
-            filter: blur(8px);
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        /* Надпись на фото – вензель*/
-        .floating-names {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
+        /* ТЕКСТ — ПО ЦЕНТРУ, БЕЗ ДОПОЛНИТЕЛЬНЫХ ПОДЛОЖЕК */
+        .content {
             text-align: center;
-            background: linear-gradient(90deg, transparent, rgba(255,250,220,0.85), transparent);
-            padding: 1rem 0.8rem;
-            backdrop-filter: blur(3px);
-            z-index: 5;
+            background: transparent;
+            max-width: 85%;
+            margin: 0 auto;
         }
 
-        .floating-names h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.6rem;
+        /* СТИЛИ ДЛЯ ТЕКСТА */
+        .greeting {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 1.2rem;
+            color: #4a311c;
+        }
+
+        .love-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .invite-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            color: #b47c34;
+        }
+
+        .names {
+            margin: 1rem 0 0.8rem;
+        }
+        .names h1 {
+            font-size: 4rem;
             font-weight: 700;
             font-style: italic;
-            letter-spacing: 1px;
-            color: #876d39;
-            text-shadow: 0 1px 3px rgba(255,245,200,0.9);
+            background: linear-gradient(135deg, #b8860b, #e0b852, #ca9a2e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .floating-names .sub {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ab8a47;
-        }
-
-        /* Основной контент (информация) */
-        .content-luxury {
-            padding: 2rem 2rem 2rem;
-        }
-
-        /* золотая линия с узором */
-        .gold-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #e6c47a, #dbb549, #e6c47a, transparent);
-            width: 120px;
-            margin: 0 auto 1.2rem auto;
-        }
-
-        /* дата и место — чисто, изысканно */
-        .event-details {
-            text-align: center;
-            margin: 1.2rem 0 1.5rem;
-        }
-
-        .date-circle {
-            background: rgba(235, 220, 185, 0.2);
-            display: inline-block;
-            padding: 0.3rem 1.8rem;
-            border-radius: 60px;
-            border: 0.5px solid #dcc27a;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 0.9rem;
-            color: #7f6236;
-        }
-
-        .big-day {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            font-style: italic;
-            margin: 0.6rem 0;
-            color: #4e3822;
-        }
-
-        .address-elegant {
-            background: #fffef8;
-            border-radius: 48px;
-            padding: 1rem 1.2rem;
-            margin: 1.2rem 0;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.02), inset 0 0 0 1px #f9efdb;
-            text-align: center;
-        }
-
-        .address-elegant i {
-            color: #cfac64;
-            margin-right: 8px;
+        .wedding-info {
             font-size: 1.2rem;
-        }
-
-        .address-text {
-            font-size: 1.2rem;
-            font-weight: 500;
-            font-family: 'Cormorant Garamond', serif;
             font-style: italic;
+            margin: 1rem 0;
         }
 
-        .address-sub {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: #9d8253;
-            margin-top: 6px;
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: #d4af37;
+            margin: 1.2rem auto;
+            opacity: 0.6;
         }
 
-        /* Деликатное пожелание про детей — очень мягко */
-        .no-kids-gentle {
-            background: linear-gradient(115deg, #fcf8ef, #fffcf4);
-            border-radius: 40px;
-            padding: 1rem 1.5rem;
+        /* ВСЯ ИНФОРМАЦИЯ О СВАДЬБЕ — СПЛОШНЫМ ТЕКСТОМ */
+        .details {
             margin: 1.5rem 0;
-            border-left: 4px solid #e2be6a;
-            text-align: center;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
-        .no-kids-gentle p {
+        .details p {
+            margin: 0.3rem 0;
+        }
+
+        .dresscode {
+            margin: 1.8rem 0;
+        }
+        .dresscode-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b97f32;
+            margin-bottom: 0.5rem;
+        }
+        .dresscode-text {
             font-size: 1rem;
             font-style: italic;
-            font-weight: 500;
-        }
-
-        .no-kids-gentle i {
-            color: #c7a24d;
-            margin-right: 8px;
-        }
-
-        .small-wish {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            margin-top: 8px;
-            opacity: 0.8;
-        }
-
-        /* "Идеи, которые могут вас заинтересовать" — три блока с объёмом */
-        .inspiration-block {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0 1.5rem;
-            justify-content: center;
-        }
-
-        .inspire-card {
-            flex: 1;
-            background: rgba(250, 245, 235, 0.8);
-            backdrop-filter: blur(2px);
-            border-radius: 32px;
-            padding: 1rem 0.4rem;
-            text-align: center;
-            transition: all 0.25s ease;
-            border: 1px solid #efdfbb;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.03);
-        }
-
-        .inspire-card i {
-            font-size: 1.8rem;
-            color: #dbb454;
-            margin-bottom: 10px;
-        }
-
-        .inspire-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-
-        .inspire-card:hover {
-            transform: translateY(-5px);
-            border-color: #dbbc79;
-            background: #fffcf2;
-            box-shadow: 0 14px 22px -8px rgba(160, 130, 60, 0.15);
-        }
-
-        /* НОВЫЙ БЛОК — ТЁПЛЫЕ СЛОВА И ПОДТВЕРЖДЕНИЕ (вместо кнопок action-buttons) */
-        .wishes-block {
-            background: linear-gradient(135deg, #fffbf0, #fef7e8);
-            border-radius: 48px;
-            padding: 1.8rem 1.5rem;
-            margin: 2rem 0 1rem;
-            text-align: center;
-            border: 1px solid #eddbba;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-        }
-
-        .heart-icon {
-            font-size: 2rem;
-            color: #e8c36a;
             margin-bottom: 0.8rem;
         }
 
-        .wishes-text {
-            font-size: 1.2rem;
+        /* ЦВЕТНЫЕ КРУЖОЧКИ — ТОЛЬКО ОНИ, БЕЗ НАЗВАНИЙ */
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+        .color-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .color-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .no-kids {
+            font-style: italic;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        .wishes {
+            margin: 1.8rem 0 1rem;
             font-style: italic;
             line-height: 1.5;
-            color: #5e4530;
-            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
         }
 
-        .wishes-signature {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #b89860;
-            margin-bottom: 0.5rem;
-        }
-
-        .rsvp-button {
-            background: transparent;
-            border: 1.5px solid #e2be6a;
-            padding: 0.8rem 2rem;
-            border-radius: 60px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #8a6c3e;
-            transition: 0.2s;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 0.5rem;
-        }
-
-        .rsvp-button i {
-            color: #dbb454;
-        }
-
-        .rsvp-button:hover {
-            background: #e5c77e;
-            border-color: #cfaa58;
-            color: #2e2415;
-            transform: scale(0.97);
-        }
-
-        /* футер с элегантным текстом */
-        .footer-note {
-            text-align: center;
-            font-size: 0.7rem;
-            margin-top: 2rem;
-            color: #b6965c;
+        .signature {
+            margin-top: 1rem;
+            font-size: 1.1rem;
             font-style: italic;
-            border-top: 1px dashed #eedcb8;
-            padding-top: 1.2rem;
+            color: #b47c34;
         }
 
-        /* Адаптивность */
-        @media (max-width: 550px) {
+        .footer {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* АДАПТАЦИЯ ПОД ТЕЛЕФОН */
+        @media (max-width: 750px) {
             .container {
-                margin: 1rem auto;
+                max-width: 100%;
             }
-            .floating-names h1 {
-                font-size: 1.8rem;
+            .invitation-card {
+                padding: 2rem 1.2rem;
             }
-            .content-luxury {
-                padding: 1.5rem;
+            .content {
+                max-width: 95%;
             }
-            .big-day {
-                font-size: 1.6rem;
+            .names h1 {
+                font-size: 2.5rem;
             }
-            .wishes-text {
-                font-size: 1rem;
+            .greeting {
+                font-size: 1.4rem;
             }
-        }
-
-        /* Декоративные цветочные объёмные элементы в углах (не ковёр, а воздушные цветы) */
-        .floral-corner {
-            position: absolute;
-            bottom: 3%;
-            right: 2%;
-            width: 110px;
-            height: 110px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23efdfb3" opacity="0.5" d="M70,80 Q75,65 85,70 Q90,80 80,85 Q70,88 70,80Z" /><path fill="%23f7efd0" opacity="0.6" d="M20,25 Q35,15 40,28 Q42,38 30,40 Q20,38 20,25Z" /></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-            pointer-events: none;
-            opacity: 0.5;
-            z-index: 1;
-        }
-        .floral-corner-left {
-            left: 2%;
-            top: 8%;
-            transform: rotate(-15deg);
+            .love-text {
+                font-size: 1.1rem;
+            }
+            .details {
+                font-size: 0.95rem;
+            }
+            .color-circle {
+                width: 38px;
+                height: 38px;
+            }
         }
     </style>
 </head>
 <body>
-<div class="ethereal-bg"></div>
-<div class="floral-corner floral-corner-left"></div>
-<div class="floral-corner" style="right: 2%; bottom: 5%; transform: rotate(10deg);"></div>
-
 <div class="container">
-    <div class="wedding-site">
-        <!-- ФОТО МОЛОДОЖЁНОВ НА ПЕРЕДНЕМ ПЛАНЕ -->
-        <div class="hero-photo">
-            <div class="photo-frame">
-                <!-- Фото: замените wedding.jpg на ваше фото, загруженное в репозиторий -->
-                <img class="couple-img" src="wedding.jpg" alt="Ильнур и Назира — влюбленная пара" 
-                     onerror="this.src='https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800'">
-            </div>
-            <div class="floating-names">
+    <div class="invitation-card">
+        <div class="content">
+            <div class="greeting">Дорогие гости!</div>
+            <div class="love-text">Наша безграничная любовь дала повод собрать родных и близких вместе!</div>
+            <div class="invite-title">Будем рады видеть вас на нашей свадьбе</div>
+
+            <div class="names">
                 <h1>Ильнур & Назира</h1>
-                <div class="sub">Приглашают на торжество любви</div>
+            </div>
+
+            <div class="wedding-info">4 июля 2026 · Суббота</div>
+            <div class="divider"></div>
+
+            <!-- ВСЯ ИНФОРМАЦИЯ БЕЗ СТИКЕРОВ -->
+            <div class="details">
+                <p>с. Сафакулево, ул. Ленина 13А</p>
+                <p>Сбор гостей — 15:30</p>
+                <p>Торжественная церемония — 16:00</p>
+                <p>Праздничный банкет — 17:00</p>
+            </div>
+
+            <!-- ДРЕСС-КОД — ТОЛЬКО КРУЖОЧКИ (БЕЗ НАЗВАНИЙ) -->
+            <div class="dresscode">
+                <div class="dresscode-title">Дресс-код</div>
+                <div class="dresscode-text">Мы будем очень рады, если вы поддержите цветовую гамму праздника:</div>
+                <div class="colors">
+                    <div class="color-circle" style="background: #F5E6D3;"></div>
+                    <div class="color-circle" style="background: #E8D1B5;"></div>
+                    <div class="color-circle" style="background: #D4AF37;"></div>
+                    <div class="color-circle" style="background: #F3D8C0;"></div>
+                </div>
+                <div style="font-size: 0.9rem; margin-top: 0.8rem; font-style: italic;">Нежные пастельные тона, золотые акценты, элегантные наряды</div>
+            </div>
+
+            <!-- ПРОСЬБА БЕЗ ДЕТЕЙ -->
+            <div class="no-kids">
+                Дорогие гости, мы хотим, чтобы вы отдохнули и насладились праздником,<br>
+                поэтому с теплотой просим провести этот вечер без детей.
+            </div>
+
+            <div class="wishes">
+                Сохраните эту нежную открытку на память об этом важном для нас событии,<br>
+                а мы сохраним ваши тёплые слова и пожелания в нашем сердце.
+            </div>
+
+            <div class="signature">
+                С любовью, Ильнур и Назира
+            </div>
+
+            <div class="footer">
+                с. Сафакулево · 4 июля 2026
             </div>
         </div>
-
-        <div class="content-luxury">
-            <div class="gold-line"></div>
-            
-            <div class="event-details">
-                <span class="date-circle"><i class="far fa-calendar-alt"></i> 20 июля 2025</span>
-                <div class="big-day">Воскресенье, 17:00</div>
-                <div style="font-size:0.9rem; letter-spacing:0.5px;">Сбор гостей с 16:30</div>
-            </div>
-
-            <!-- Адрес: просто "Банкетный зал" без лишних названий -->
-            <div class="address-elegant">
-                <i class="fas fa-map-pin"></i> <span class="address-text">г. Челябинск, ул. Чичерина, Банкетный зал</span>
-                <div class="address-sub">Центральный район, парковая зона</div>
-            </div>
-
-            <!-- Деликатная просьба без детей — мягко и с заботой -->
-            <div class="no-kids-gentle">
-                <p><i class="fas fa-heart"></i> Дорогие гости, хотим, чтобы вы отдохнули и насладились праздником в полной мере, <br> 
-                поэтому с нежностью просим провести этот вечер без детей.</p>
-                <div class="small-wish">Создадим атмосферу лёгкости и романтики вместе ✨</div>
-            </div>
-
-            <!-- Три блока "Идеи, которые вас заинтересуют" (Фоновые узоры, Золотистые обои, Цветочный фон) -->
-            <div class="inspiration-block">
-                <div class="inspire-card">
-                    <i class="fas fa-border-all"></i>
-                    <h4>Фоновые узоры</h4>
-                    <span style="font-size:0.7rem;">Золотые вензеля</span>
-                </div>
-                <div class="inspire-card">
-                    <i class="fas fa-palette"></i>
-                    <h4>Золотистые обои</h4>
-                    <span style="font-size:0.7rem;">Изысканный стиль</span>
-                </div>
-                <div class="inspire-card">
-                    <i class="fas fa-seedling"></i>
-                    <h4>Цветочный фон</h4>
-                    <span style="font-size:0.7rem;">Свадебная флористика</span>
-                </div>
-            </div>
-
-            <!-- НОВЫЙ БЛОК — ТЁПЛЫЕ СЛОВА (вместо action-buttons с кнопками) -->
-            <div class="wishes-block">
-                <div class="heart-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="wishes-text">
-                    «Счастье — это когда рядом те, кто дорог. <br>
-                    Мы будем бесконечно рады видеть вас в этот важный для нас день!»
-                </div>
-                <div class="wishes-signature">
-                    Ильнур & Назира
-                </div>
-                <button class="rsvp-button" id="rsvpBtn">
-                    <i class="far fa-envelope"></i> Подтвердить присутствие
-                </button>
-                <div class="small-wish" style="margin-top: 1rem;">
-                    Пожалуйста, дайте знать до 1 июля
-                </div>
-            </div>
-            
-            <div class="footer-note">
-                <i class="fas fa-feather-alt"></i> Ильнур + Назира
-            </div>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 1rem; font-size: 0.7rem; color: #ab8a52;">
-        <i class="fas fa-ring"></i> Мы будем рады разделить с вами этот день
     </div>
 </div>
-
-<script>
-    // Кнопка подтверждения присутствия (вместо старых кнопок)
-    const rsvpBtn = document.getElementById('rsvpBtn');
-    
-    if (rsvpBtn) {
-        rsvpBtn.addEventListener('click', () => {
-            const notification = document.createElement('div');
-            notification.innerHTML = '🌹 Спасибо! Мы ждём вас 20 июля 🌹';
-            notification.style.position = 'fixed';
-            notification.style.bottom = '20px';
-            notification.style.left = '50%';
-            notification.style.transform = 'translateX(-50%)';
-            notification.style.backgroundColor = '#fcf3df';
-            notification.style.color = '#7f613b';
-            notification.style.padding = '10px 20px';
-            notification.style.borderRadius = '50px';
-            notification.style.fontFamily = "'Cormorant Garamond', serif";
-            notification.style.fontWeight = 'bold';
-            notification.style.border = '1px solid #e7c47a';
-            notification.style.boxShadow = '0 6px 14px rgba(0,0,0,0.05)';
-            notification.style.backdropFilter = 'blur(6px)';
-            notification.style.zIndex = '1000';
-            notification.style.fontSize = '0.9rem';
-            document.body.appendChild(notification);
-            setTimeout(() => {
-                notification.style.opacity = '0';
-                setTimeout(() => notification.remove(), 600);
-            }, 2500);
-        });
-    }
-    
-    // Анимация появления
-    window.addEventListener('load', () => {
-        const siteCard = document.querySelector('.wedding-site');
-        if (siteCard) {
-            siteCard.style.opacity = '0';
-            siteCard.style.transform = 'translateY(12px)';
-            siteCard.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
-            setTimeout(() => {
-                siteCard.style.opacity = '1';
-                siteCard.style.transform = 'translateY(0)';
-            }, 100);
-        }
-    });
-</script>
 </body>
 </html>
